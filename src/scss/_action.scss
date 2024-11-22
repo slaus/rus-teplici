@@ -1,0 +1,33 @@
+.action {
+    height    : 63px;
+    text-align: center;
+    background: $orange;
+
+    &__block {
+        height         : 63px;
+        width          : 100%;
+        display        : flex;
+        align-items    : center;
+        gap            : 50px;
+        justify-content: center;
+    }
+
+    &__icon {
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
+        gap            : 10px;
+        width          : 60px;
+        height         : 41px;
+        background     : $orangeDark;
+        border-radius  : 10px;
+    }
+
+    &__title {
+        font-family   : $fontMain;
+        font-weight   : 500;
+        font-size     : 25px;
+        text-transform: uppercase;
+        color: $black;
+    }
+}

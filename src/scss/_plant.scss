@@ -1,0 +1,24 @@
+.plant {
+    padding: 60px 0;
+    display: block;
+
+    &__title {
+        margin-bottom: 30px;
+    }
+
+    &__desc {
+        line-height: 21px;
+
+        p+p {
+            margin-top: 20px;
+        }
+
+        a {
+            color: $green;
+            text-decoration: underline;
+            &:hover {
+                color: $orangeDark;
+            }
+        }
+    }
+}

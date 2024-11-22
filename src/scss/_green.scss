@@ -1,0 +1,41 @@
+.green {
+    display: block;
+    padding: 60px 0;
+
+    &__block {
+        margin-top           : 60px;
+        display              : grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap                  : 50px;
+    }
+
+    &__item {
+        display        : flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items    : center;
+        gap            : 20px;
+
+        &--img {
+            width          : 100%;
+            height         : 209px;
+            background     : $greenLight;
+            border-radius  : 20px;
+            display        : flex;
+            justify-content: center;
+            align-items    : center;
+
+            img {
+                width : 94px;
+                height: 76px;
+            }
+
+        }
+
+        &--title {
+            font-size  : 22px;
+            line-height: 25px;
+            font-weight: 700;
+        }
+    }
+}

@@ -16,6 +16,7 @@ Thumbs.db
 dist/
 build/
 docs/
+src/components/
 
 # Gulp-specific
 gulpfile.js.map

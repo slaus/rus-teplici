@@ -1,0 +1,108 @@
+.other {
+    display: block;
+    padding: 60px 0;
+
+    &__block {
+        margin-top           : 50px;
+        display              : grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap                  : 30px;
+    }
+
+    &__item {
+
+        &--img {
+            width        : 100%;
+            height       : 240px;
+            border-radius: 15px;
+            overflow     : hidden;
+
+            img {
+                width     : 100%;
+                height    : 100%;
+                object-fit: cover;
+            }
+        }
+
+        &--title {
+            margin-top : 20px;
+            height     : 25px;
+            font-weight: 700;
+            font-size  : 22px;
+            line-height: 25px;
+        }
+
+        &--info {
+            display        : flex;
+            align-items    : flex-end;
+            justify-content: space-between;
+            margin-top     : 20px;
+
+            &-price {
+                display       : flex;
+                flex-direction: column;
+                font-weight   : 700;
+                line-height   : 25px;
+
+                span {
+                    font-size  : 20px;
+                    white-space: nowrap;
+
+                    span {
+                        font-size: 22px;
+                    }
+
+                    &.old {
+                        font-size      : 18px;
+                        font-weight    : 500;
+                        color          : $greenDark;
+                        text-decoration: line-through;
+
+                        span {
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+
+            &-btn {
+                box-sizing     : border-box;
+                display        : flex;
+                flex-direction : row;
+                justify-content: center;
+                align-items    : center;
+                padding        : 10px 40px 10px 20px;
+                height         : 40px;
+                border-radius  : 10px;
+                flex           : none;
+                background: $greenLight;
+                order          : 1;
+                flex-grow      : 0;
+                font-weight    : 500;
+                font-size      : 16px;
+                text-decoration: none;
+                color          : $black;
+                position       : relative;
+
+                &:after {
+                    content        : "";
+                    position       : absolute;
+                    top: calc(50% - 6px);
+                    right          : 15px;
+                    width          : 15px;
+                    height         : 15px;
+                    display        : flex;
+                    justify-content: center;
+                    align-items    : center;
+                    background     : url("../img/arrow-right-top.svg") center center no-repeat;
+                    background-size: contain;
+                }
+
+                &:hover {
+                    background: $orange;
+                    color     : $green;
+                }
+            }
+        }
+    }
+}
