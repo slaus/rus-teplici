@@ -1,43 +1,99 @@
 .making {
     display: block;
-    padding: 60px 0;
+    margin : 50px 0;
+    padding: 30px 14%;
+
+    @media screen and (max-width: $breakpoint1600) {
+        padding: 30px 5%;
+    }
+
+    @media screen and (max-width: $breakpoint1450) {
+        padding: 30px 0;
+        margin : 30px 0;
+    }
 
     &__title {
-        margin-bottom: 30px;
+        margin-bottom: 60px;
+
+        @media screen and (max-width: $breakpoint1450) {
+            margin-bottom: 30px;
+        }
     }
 
     &__block {
         display              : grid;
         grid-template-columns: repeat(3, 1fr);
         gap                  : 10%;
+
+        @media screen and (max-width: $breakpoint1600) {
+            gap: 5%;
+        }
+
+        @media screen and (max-width: $breakpoint1450) {
+            gap: 30px;
+        }
+
+        @media screen and (max-width: $breakpoint1200) {
+            gap: 20px;
+        }
+
+        @media screen and (max-width: $breakpoint992) {
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
 
     &__item {
         &--icon {
-            margin-bottom: 30px;
-            display: flex;
+            margin-bottom  : 30px;
+            display        : flex;
             justify-content: center;
-            align-items: center;
-            width: 80px;
-            height: 80px;
+            align-items    : center;
+            width          : 80px;
+            height         : 80px;
+
+            @media screen and (max-width: $breakpoint1200) {
+                width        : 60px;
+                height       : 60px;
+                margin-bottom: 20px;
+            }
+
+            @media screen and (max-width: $breakpoint992) {
+                display: inline-flex;
+                float  : left;
+            }
 
             img {
-                width: 100%;
-                height: 100%;
+                width     : 100%;
+                height    : 100%;
                 object-fit: contain;
             }
         }
 
         &--title {
-            font-weight: 500;
-            font-size  : 20px;
-            line-height: 23px;
+            font-weight  : 500;
+            font-size    : 20px;
+            line-height  : 23px;
             margin-bottom: 20px;
+
+            @media screen and (max-width: $breakpoint1200) {
+                font-size: 19px;
+            }
+
+            @media screen and (max-width: $breakpoint992) {
+                height      : 60px;
+                display     : inline-flex;
+                align-items : center;
+                padding-left: 20px;
+            }
         }
 
         &--desc {
             font-size  : 18px;
             line-height: 21px;
+
+            @media screen and (max-width: $breakpoint1200) {
+                font-size: 16px;
+            }
         }
     }
 }

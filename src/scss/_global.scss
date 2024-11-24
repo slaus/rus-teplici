@@ -5,19 +5,23 @@
     padding  : 0 $containerSidePadding + px;
 
     @media (max-width: $breakpoint1450) {
-        max-width: 1200px;
+        max-width: 1400px;
+    }
+
+    @media (max-width: $breakpoint1200) {
+        max-width: none;
     }
 
     @media (max-width: $breakpoint992) {
-        max-width: 970px;
+        // max-width: 970px;
     }
 
     @media (max-width: $breakpoint768) {
-        max-width: 740px;
+        // max-width: 740px;
     }
 
     @media (max-width: $breakpoint577) {
-        max-width: 776px;
+        // max-width: 776px;
     }
 
     @media (max-width: $breakpoint480) {
@@ -30,6 +34,10 @@ body {
     font-weight: 400;
     font-style : normal;
     font-size  : 16px;
+
+    @media screen and (max-width: $breakpoint1450) {
+        font-size: 15px;
+    }
 
     &.locked {
         overflow: hidden;
@@ -55,4 +63,9 @@ h2 {
     font-weight: 700;
     font-size  : 26px;
     line-height: 30px;
+
+    @media screen and (max-width: $breakpoint1450) {
+        font-size: 24px;
+        line-height: 28px;
+    }
 }

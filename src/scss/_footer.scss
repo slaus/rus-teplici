@@ -3,12 +3,18 @@
     background: $gray;
     color     : $white;
     padding   : 50px 0;
-    height    : 596px;
+    // height    : 596px;
+    @media screen and (max-width: $breakpoint1450) {
+        padding: 30px 0;
+    }
 
     &__block {
         display              : grid;
-        grid-template-columns: 37% 29% 34%;
+        grid-template-columns: repeat(3, 1fr);
         gap                  : 30px;
+        @media screen and (max-width: $breakpoint1450) {
+            gap: 20px;
+        }
     }
 
     &__item {
@@ -19,6 +25,12 @@
             color        : $white;
             margin-top   : 20px;
             margin-bottom: 15px;
+            @media screen and (max-width: $breakpoint1450) {
+                font-size: 21px;
+            }
+            @media screen and (max-width: $breakpoint1200) {
+                font-size: 19px;
+            }
         }
 
         &--list {
@@ -28,6 +40,11 @@
             color        : $white;
             padding-left : 10px;
             margin-bottom: 30px;
+
+            @media screen and (max-width: $breakpoint1200) {
+                font-size: 16px;
+                line-height: 26px;
+            }
 
             li {}
 
@@ -41,14 +58,19 @@
         }
 
         &--copyright {
-            padding-left: 10px;
-            height      : 36px;
-            font-size   : 18px;
-            line-height : 22px;
-            color       : $greenDark;
-            width       : 100%;
-            max-width   : 400px;
+            padding-left : 10px;
+            height       : 36px;
+            font-size    : 18px;
+            line-height  : 22px;
+            color        : $greenDark;
+            width        : 100%;
+            max-width    : 400px;
             margin-bottom: 20px;
+
+            @media screen and (max-width: $breakpoint1200) {
+                font-size: 16px;
+                line-height: 20px;
+            }
 
             a {
                 color: $greenDark;

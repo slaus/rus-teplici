@@ -1,19 +1,124 @@
 <div class="navbar">
     <div class="navbar__logo">
-        <a href="/"><img src="./img/logo.svg" alt="rus-teplici.ru"></a>
+        <a href="/"><img src="/img/logo.svg" alt="rus-teplici.ru"></a>
     </div>
-    <nav>
+    <nav class="navbar__nav">
+        <div class="menu" id="menu">
+            <a href="#" class="menu__link">
+                <div class="menu__img menu__img--burger"><img src="/img/burger.svg" alt="burger"></div>
+                <div class="menu__img menu__img--close"><img src="/img/cancel.svg" alt="close"></div>
+                <span>Меню</span>
+            </a>
+            <div id="megamenu" class="megamenu">
+                <ul class="megamenu__list">
+                    <li class="megamenu__item parent">
+                        <a href="" class="megamenu__link">Теплицы из поликарбоната</a>
+                        <ul class="megamenu__sub">
+                            <li class="megamenu__item parent">
+                                <a href="" class="megamenu__link">Арочные</a>
+                            </li>
+                            <li class="megamenu__item parent">
+                                <a href="" class="megamenu__link">Прямостенные</a>
+                            </li>
+                            <li class="megamenu__item parent">
+                                <a href="" class="megamenu__link">Каплевидные</a>
+                            </li>
+                            <li class="megamenu__item parent">
+                                <a href="" class="megamenu__link">Двухскатные</a>
+                            </li>
+                            <li class="megamenu__item parent">
+                                <a href="" class="megamenu__link">Домиком</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="megamenu__item parent">
+                        <a href="" class="megamenu__link">Беседки из поликарбоната</a>
+                        <ul class="megamenu__sub">
+                            <li class="megamenu__item parent">
+                                <a href="" class="megamenu__link">Премиум</a>
+                            </li>
+                            <li class="megamenu__item parent">
+                                <a href="" class="megamenu__link">Астра</a>
+                            </li>
+                            <li class="megamenu__item parent">
+                                <a href="" class="megamenu__link">Пион</a>
+                            </li>
+                            <li class="megamenu__item parent">
+                                <a href="" class="megamenu__link">Сказка</a>
+                            </li>
+                            <li class="megamenu__item parent">
+                                <a href="" class="megamenu__link">Самурай</a>
+                            </li>
+                            <li class="megamenu__item parent">
+                                <a href="" class="megamenu__link">Болонья</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="megamenu__item parent">
+                        <a href="" class="megamenu__link">Навесы из поликарбоната</a>
+                        <ul class="megamenu__sub">
+                            <li class="megamenu__item parent">
+                                <a href="" class="megamenu__link">Автомобильные</a>
+                            </li>
+                            <li class="megamenu__item parent">
+                                <a href="" class="megamenu__link">Навесы для дачи</a>
+                            </li>
+                            <li class="megamenu__item parent">
+                                <a href="" class="megamenu__link">Навесы для бассейна</a>
+                            </li>
+                            <li class="megamenu__item parent">
+                                <a href="" class="megamenu__link">Навесы-козырьки</a>
+                            </li>
+                            <li class="megamenu__item parent">
+                                <a href="" class="megamenu__link">Для барбекю</a>
+                            </li>
+                            <li class="megamenu__item parent">
+                                <a href="" class="megamenu__link">Односкатные</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="megamenu__item parent">
+                        <a href="" class="megamenu__link">Оборудование для теплиц</a>
+                        <ul class="megamenu__sub">
+                            <li class="megamenu__item parent">
+                                <a href="" class="megamenu__link">Автоматика для теплиц</a>
+                            </li>
+                            <li class="megamenu__item parent">
+                                <a href="" class="megamenu__link">Для монтажа</a>
+                            </li>
+                            <li class="megamenu__item parent">
+                                <a href="" class="megamenu__link">Для обустройства</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="megamenu__item parent sale">
+                        <a href="" class="megamenu__link">Распродажа теплиц <img src="/img/percent.svg" alt="img"></a>
+                    </li>
+                    <li class="megamenu__item parent">
+                        <a href="" class="megamenu__link">Услуги</a>
+                        <ul class="megamenu__sub">
+                            <li class="megamenu__item parent">
+                                <a href="" class="megamenu__link">Теплицы на заказ</a>
+                            </li>
+                            <li class="megamenu__item parent">
+                                <a href="" class="megamenu__link">Ремонт теплиц</a>
+                            </li>
+                            <li class="megamenu__item parent">
+                                <a href="" class="megamenu__link">Хранение теплиц</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
         <ul class="navbar__menu">
-            <li class="navbar__menu--item">
-                <a href="#" class="navbar__menu--item-link" id="menu"><img src="./img/burger.svg" alt=""> Меню</a>
-            </li>
             <li class="navbar__menu--item">
                 <a href="greenhouse.html" class="navbar__menu--item-link">Теплицы из поликарбоната</a>
             </li>
             <li class="navbar__menu--item">
                 <a href="delivery.html" class="navbar__menu--item-link">Доставка</a>
             </li>
-            <li class="navbar__menu--item">
+            <li class="navbar__menu--item parent">
                 <a href="#" class="navbar__menu--item-link" id="about">О компании</a>
             </li>
             <li class="navbar__menu--item">
@@ -22,7 +127,23 @@
         </ul>
     </nav>
 
-    <button class="navbar__burger">
+    <!-- <button class="navbar__burger">
         <span></span>
-    </button>
+    </button> -->
+
+    <div class="navbar__info">
+        <div class="navbar__info--place">
+            <a href="" id="city"><img src="/img/place.svg" alt=""> Москва</a>
+        </div>
+        <div class="navbar__info--phones">
+            <a href="tel:+74951913965">+7 (495) 191-39-65</a>
+            <a href="tel:+78003006428">+7 (800) 300-64-28</a>
+        </div>
+        <div class="navbar__info--raiting">
+            <img src="/img/raiting.png" alt="raiting">
+        </div>
+        <div class="navbar__info--callback">
+            <a href="#" id="callback">Обратный звонок</a>
+        </div>
+    </div>
 </div>

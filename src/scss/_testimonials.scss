@@ -1,6 +1,16 @@
 .testimonials {
-    padding: 60px 0;
     display: block;
+    margin : 60px 0 50px;
+    padding: 20px 14%;
+
+    @media screen and (max-width: $breakpoint1600) {
+        padding: 20px 5%;
+    }
+
+    @media screen and (max-width: $breakpoint1450) {
+        padding: 20px 0;
+        margin : 30px 0;
+    }
 
     &__top {
         display        : flex;
@@ -8,6 +18,10 @@
         justify-content: space-between;
         align-items    : center;
         margin-bottom  : 50px;
+
+        @media screen and (max-width: $breakpoint1450) {
+            margin-bottom: 30px;
+        }
     }
 
     &__title {
@@ -38,6 +52,12 @@
         color          : $black;
         position       : relative;
 
+        @media screen and (max-width: $breakpoint1450) {
+            height     : 38px;
+            line-height: 38px;
+            font-size  : 17px;
+        }
+
         &:after {
             content        : "";
             position       : absolute;
@@ -61,18 +81,32 @@
         display              : grid;
         grid-template-columns: repeat(2, 1fr);
         gap                  : 40px 30px;
+
+        @media screen and (max-width: $breakpoint1450) {
+            gap: 30px 20px;
+        }
+        @media screen and (max-width: $breakpoint992) {
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
 
     &__item {
         display              : grid;
         grid-template-columns: 30% auto;
         gap                  : 20px;
+        @media screen and (max-width: $breakpoint992) {
+           grid-template-columns: 35% auto; 
+        }
     }
 
     &__info {
         display       : flex;
         flex-direction: column;
         gap           : 20px;
+
+        @media screen and (max-width: $breakpoint1200) {
+            gap: 10px;
+        }
     }
 
     &__img {
@@ -89,17 +123,21 @@
     }
 
     &__product {
-        font-size: 12px;
+        font-size  : 12px;
         font-weight: 500;
         line-height: 14px;
     }
 
     &__link {
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 18px;
-        color: $green;
+        font-size      : 16px;
+        font-weight    : 400;
+        line-height    : 18px;
+        color          : $green;
         text-decoration: underline;
+
+        @media screen and (max-width: $breakpoint1200) {
+            font-size: 15px;
+        }
 
         &:hover {
             color: $greenDark;
@@ -111,6 +149,10 @@
         flex-direction: column;
         gap           : 20px;
         position      : relative;
+
+        @media screen and (max-width: $breakpoint1200) {
+            gap: 10px;
+        }
     }
 
     &__name {
@@ -131,13 +173,26 @@
         display    : inline-block;
         position   : absolute;
         right      : 0;
+
+        @media screen and (max-width: $breakpoint1200) {
+            font-size: 16px;
+        }
     }
 
-    &__vote {}
+    &__vote {
+
+        img {
+            height: 16px;
+        }
+    }
 
     &__desc {
         font-size  : 18px;
         line-height: 21px;
+
+        @media screen and (max-width: $breakpoint1200) {
+            font-size: 16px;
+        }
     }
 
     &__more {
@@ -151,8 +206,12 @@
         color               : $black;
         align-self          : flex-end;
 
+        @media screen and (max-width: $breakpoint1200) {
+            font-size: 16px;
+        }
+
         &:hover {
-            color: $orange;
+            color               : $orange;
             text-decoration-line: underline;
         }
     }
