@@ -75,7 +75,7 @@ function getScrollbarWidth() {
 }
 
 function bindModal(trigger, modal, close) {
-  trigger = document.querySelector(trigger);
+  trigger = document.querySelectorAll(trigger);
   modal = document.querySelector(modal);
   close = document.querySelector(close);
 
@@ -90,11 +90,13 @@ function bindModal(trigger, modal, close) {
     body.style.paddingRight = '';
   };
 
-  trigger.addEventListener('click', (e) => {
-    e.preventDefault();
-    modal.style.display = 'flex';
-    body.classList.add('locked');
-    applyPaddingForScrollbar();
+  trigger.forEach((item) => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      modal.style.display = 'flex';
+      body.classList.add('locked');
+      applyPaddingForScrollbar();
+    });
   });
 
   close.addEventListener('click', () => {
@@ -112,8 +114,8 @@ function bindModal(trigger, modal, close) {
   });
 }
 
-bindModal('#callback', '#callback-modal', '#callback-close');
-bindModal('#city', '#city-modal', '#city-close');
+bindModal('.callback', '#callback-modal', '#callback-close');
+bindModal('.choose-city', '#city-modal', '#city-close');
 
 
 /** Swiper slider */

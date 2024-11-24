@@ -1,13 +1,21 @@
 .navbar {
+    height         : 138px;
+    width          : 100%;
     display        : flex;
     justify-content: space-between;
     align-items    : center;
-    padding        : 0;
+    gap            : 20px;
 
     &__logo {
+        height     : 100%;
+        width      : 240px;
+        display    : flex;
+        align-items: center;
+
         @media screen and (max-width: $breakpoint1600) {
             width: 200px;
         }
+
         @media screen and (max-width: $breakpoint1450) {
             width: 180px;
         }
@@ -25,20 +33,12 @@
     }
 
     &__nav {
-        display    : flex;
-        gap        : 10px;
-        height     : 43px;
-        align-items: center;
-        position   : relative;
-
-        @media screen and (max-width: $breakpoint1450) {
-            height: 35px;
-            gap: 0;
-        }
-        @media screen and (max-width: $breakpoint1200) {
-            margin-right: auto;
-            margin-left: 20px;
-        }
+        position       : relative;
+        width          : 100%;
+        height         : 43px;
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
     }
 
     .menu {
@@ -130,7 +130,7 @@
             font-size     : 20px;
             line-height   : 43px;
             height        : 43px;
-            gap           : 10px;
+            gap           : 5px;
 
             @media screen and (max-width: $breakpoint1450) {
                 height     : 35px;
@@ -146,6 +146,337 @@
 
             &:hover {
                 background: $orange;
+            }
+        }
+    }
+
+    .megamenu {
+        display      : none;
+        position     : absolute;
+        left         : 0;
+        top          : 100%;
+        width        : 100%;
+        background   : $greenLight;
+        box-shadow   : 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        padding      : 30px 40px;
+        border-top   : 4px solid $white;
+        z-index      : 2;
+
+        &.open {
+            display: block;
+        }
+
+        &__list {
+            column-count: 2;
+            column-gap  : 30px;
+
+            &-item {
+                &:not(.megamenu__list-item--mega) {
+                    display: none;
+                }
+
+                display      : flex;
+                align-items  : center;
+                height       : 43px;
+                padding-left : 10px;
+                padding-right: 10px;
+                border-radius: 10px;
+
+                @media screen and (max-width: $breakpoint1450) {
+                    height: 35px;
+                }
+
+                &:hover {
+                    background: $white;
+                }
+
+                &--active {}
+
+                &--info {
+                    display: none;
+                }
+
+                &.sale {
+
+                    .megamenu__list-link {
+                        color: $green;
+
+                        span {
+                            display    : flex;
+                            align-items: center;
+                            gap        : 10px;
+
+                            &:after {
+                                content        : "";
+                                display        : inline-block;
+                                width          : 20px;
+                                height         : 20px;
+                                background     : url("../img/percent.svg") center center no-repeat;
+                                background-size: contain;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &-link {
+                position   : relative;
+                font-weight: 500;
+                font-size  : 19px;
+                line-height: 23px;
+                font-family: $fontMain;
+                color      : $black;
+                display    : flex;
+                align-items: center;
+                gap        : 10px;
+                height     : 43px;
+                width      : 100%;
+
+                @media screen and (max-width: $breakpoint1450) {
+                    font-size: 17px;
+                }
+            }
+
+            &-submenu {
+                position: relative;
+
+                &:before {
+                    position       : absolute;
+                    content        : "";
+                    right          : 10px;
+                    top            : 50%;
+                    transform      : translateY(-50%);
+                    width          : 8px;
+                    height         : 12px;
+                    background     : url("../img/arrow-right.svg") center center no-repeat;
+                    background-size: contain;
+                }
+                &:hover {
+                    .megamenu-sub__list {
+                        display: block;
+                    }
+                }
+
+                &--plus {}
+            }
+
+            &-subbtn {
+                &--plus {}
+            }
+        }
+
+        &-sub__list {
+            background: red;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            display: none;
+            z-index: 1;
+
+            &-item {}
+
+            &-link {}
+        }
+    }
+
+    .mainmenu {
+        .megamenu__list {
+            width          : 100%;
+            height         : 43px;
+            display        : flex;
+            justify-content: center;
+            align-items    : center;
+            gap            : 0;
+
+            &-item {
+                border-radius : 10px;
+                padding-left  : 10px;
+                padding-right : 10px;
+                display       : flex;
+                align-items   : center;
+                position      : relative;
+                font-family   : $fontSecondary;
+                font-weight   : 400;
+                text-transform: uppercase;
+                font-size     : 20px;
+                line-height   : 43px;
+                height        : 43px;
+                gap           : 5px;
+
+                @media screen and (max-width: $breakpoint1450) {
+                    height     : 35px;
+                    line-height: 35px;
+                    font-size  : 18px;
+                }
+
+                &:not(.megamenu__list-item--main) {
+                    display: none;
+                }
+
+            }
+
+            &-submenu {
+                &:after {
+                    content        : "";
+                    width          : 15px;
+                    height         : 9px;
+                    background     : url("../img/arrow-down.svg") center center no-repeat;
+                    background-size: contain;
+                    margin-left    : -5px;
+
+                    @media screen and (max-width: $breakpoint1450) {
+                        width : 12px;
+                        height: 7px;
+                    }
+                }
+                &:before {
+                    content: unset;
+                }
+            }
+
+            &-link {
+                font-family: $fontSecondary;
+                color      : $black;
+
+                @media screen and (max-width: $breakpoint1450) {
+                    height     : 35px;
+                    line-height: 35px;
+                    font-size  : 18px;
+                }
+
+                &:hover {
+                    color: $greenDark;
+                }
+            }
+        }
+    }
+
+    &__info {
+        display              : grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap                  : 0px 20px;
+        width                : min-content;
+
+        @media screen and (max-width: $breakpoint1450) {
+            gap: 0 10px;
+        }
+
+        @media screen and (max-width: $breakpoint1200) {
+            transform: translateY(10px);
+        }
+
+        &--place {
+            padding-right: 10px;
+
+            @media screen and (max-width: $breakpoint1450) {
+                padding-right: 5px;
+
+                img {
+                    width: 15px;
+                }
+            }
+
+            a {
+                display        : flex;
+                align-items    : center;
+                justify-content: flex-end;
+                gap            : 15px;
+                font-size      : 18px;
+                line-height    : 21px;
+                color          : $black;
+                font-weight    : 400;
+
+                @media screen and (max-width: $breakpoint1450) {
+                    font-size: 16px;
+                    gap      : 5px;
+                }
+
+                &:hover {
+                    color: $orange;
+                }
+            }
+        }
+
+        &--phones {
+            display       : flex;
+            flex-direction: column;
+            align-items   : center;
+
+            a {
+                white-space: nowrap;
+                font-weight: 500;
+                font-size  : 20px;
+                line-height: 23px;
+                color      : $black;
+
+                @media screen and (max-width: $breakpoint1450) {
+                    font-size: 17px;
+                }
+
+                &:hover {
+                    color: $orange;
+                }
+            }
+        }
+
+        &--raiting {
+            img {
+                width: 150px;
+
+                @media screen and (max-width: $breakpoint1450) {
+                    width: 120px;
+                }
+            }
+        }
+
+        &--callback {
+            font-size  : 18px;
+            font-weight: 500;
+            line-height: 21px;
+            white-space: nowrap;
+            display    : flex;
+            align-items: center;
+
+            @media screen and (max-width: $breakpoint1450) {
+                font-size: 15px;
+            }
+
+            a {
+                color          : $black;
+                text-decoration: underline;
+
+                &:hover {
+                    color          : $orange;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+/*.navbar {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+    padding        : 0;
+
+    &__logo {
+        @media screen and (max-width: $breakpoint1600) {
+            width: 200px;
+        }
+        @media screen and (max-width: $breakpoint1450) {
+            width: 180px;
+        }
+
+        a {
+            display: block;
+            width  : 100%;
+
+            img {
+                width     : 100%;
+                height    : 100%;
+                object-fit: contain;
             }
         }
     }
@@ -531,4 +862,4 @@
             }
         }
     }
-}
+}*/
