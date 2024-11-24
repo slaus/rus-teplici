@@ -13,17 +13,29 @@
 
     &__title {
         margin-bottom: 60px;
+
+        @media screen and (max-width: $breakpoint1200) {
+            margin-bottom: 30px;
+        }
+
+        @media screen and (max-width: $breakpoint577) {
+            text-align: center;
+        }
     }
 
     &__block {
-        display              : block;
-        overflow: hidden;
-        position: relative;
+        display       : block;
+        overflow      : hidden;
+        position      : relative;
         padding-bottom: 30px;
+        @media screen and (max-width: $breakpoint577) {
+            padding-bottom: 0;
+        }
     }
 
     &__item {
         text-align: center;
+
         &:hover .terms__item--title {
             color: $orange;
         }
@@ -44,6 +56,7 @@
             font-weight: 500;
             line-height: 23px;
             color      : $green;
+
             @media screen and (max-width: $breakpoint1450) {
                 font-size: 19px;
             }

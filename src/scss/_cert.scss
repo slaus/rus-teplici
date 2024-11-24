@@ -13,8 +13,13 @@
 
     &__title {
         margin-bottom: 60px;
+
         @media screen and (max-width: $breakpoint1450) {
             margin-bottom: 30px;
+        }
+
+        @media screen and (max-width: $breakpoint577) {
+            text-align: center;
         }
     }
 
@@ -23,6 +28,10 @@
         position      : relative;
         overflow      : hidden;
         padding-bottom: 30px;
+
+        @media screen and (max-width: $breakpoint577) {
+            padding-bottom: 0;
+        }
     }
 
     &__item {

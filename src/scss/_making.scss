@@ -18,6 +18,10 @@
         @media screen and (max-width: $breakpoint1450) {
             margin-bottom: 30px;
         }
+
+        @media screen and (max-width: $breakpoint577) {
+            text-align: center;
+        }
     }
 
     &__block {
@@ -37,12 +41,18 @@
             gap: 20px;
         }
 
-        @media screen and (max-width: $breakpoint992) {
+        @media screen and (max-width: $breakpoint768) {
             grid-template-columns: repeat(1, 1fr);
         }
     }
 
     &__item {
+        @media screen and (max-width: $breakpoint768) {
+            border-radius: 15px;
+            background   : $greenLight;
+            padding      : 20px;
+        }
+
         &--icon {
             margin-bottom  : 30px;
             display        : flex;
@@ -57,7 +67,7 @@
                 margin-bottom: 20px;
             }
 
-            @media screen and (max-width: $breakpoint992) {
+            @media screen and (max-width: $breakpoint768) {
                 display: inline-flex;
                 float  : left;
             }
@@ -79,7 +89,7 @@
                 font-size: 19px;
             }
 
-            @media screen and (max-width: $breakpoint992) {
+            @media screen and (max-width: $breakpoint768) {
                 height      : 60px;
                 display     : inline-flex;
                 align-items : center;
@@ -93,6 +103,10 @@
 
             @media screen and (max-width: $breakpoint1200) {
                 font-size: 16px;
+                line-height: 18px;
+            }
+            @media screen and (max-width: $breakpoint577) {
+                font-size: 14px;
             }
         }
     }

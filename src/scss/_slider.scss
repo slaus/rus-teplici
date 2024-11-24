@@ -9,9 +9,10 @@
     }
 
     &__img {
-        width: 100%;
+        width        : 100%;
         border-radius: 15px;
-        overflow: hidden;
+        overflow     : hidden;
+
         @media screen and (max-width: $breakpoint1200) {
             height: 300px;
         }
@@ -33,11 +34,25 @@
         text-transform: uppercase;
         color         : $orange;
         font-family   : $fontSecondary;
+
         @media screen and (max-width: $breakpoint1450) {
             font-size: 44px;
         }
+
         @media screen and (max-width: $breakpoint1200) {
             font-size: 36px;
+            line-height: 36px;
+        }
+        @media screen and (max-width: $breakpoint992) {
+            line-height: 32px;
+            font-size: 32px;
+        }
+        @media screen and (max-width: $breakpoint577) {
+            width: 100%;
+            text-align: center;
+            left: 0;
+            font-size: 30px;
+            line-height: 30px;
         }
     }
 
@@ -51,12 +66,27 @@
         line-height   : 36px;
         font-weight   : 500;
         text-transform: uppercase;
+
         @media screen and (max-width: $breakpoint1450) {
-            font-size: 24px;
+            font-size  : 24px;
             line-height: 32px;
         }
+
         @media screen and (max-width: $breakpoint1200) {
             font-size: 20px;
+            line-height: 24px;
+        }
+        @media screen and (max-width: $breakpoint768) {
+            line-height: 20px;
+        }
+        @media screen and (max-width: $breakpoint577) {
+            width: 100%;
+            left: 0;
+            text-align: center;
+            padding-left: 40px;
+            padding-right: 40px;
+            font-size: 19px;
+            line-height: 19px;
         }
     }
 
@@ -80,15 +110,23 @@
         height         : 45px;
         background     : $orangeDark;
         border-radius  : 10px;
+
         @media screen and (max-width: $breakpoint1450) {
-            font-size: 20px;
+            font-size  : 20px;
             font-weight: 500;
-            max-width: 200px;
-            height: 38px;
+            max-width  : 200px;
+            height     : 38px;
             line-height: 38px;
         }
+
         @media screen and (max-width: $breakpoint1200) {
             font-size: 19px;
+        }
+
+        @media screen and (max-width: $breakpoint577) {
+            right: 0;
+            left: 0;
+            margin: auto;
         }
 
         &:hover {
@@ -109,7 +147,7 @@
         width        : 40px !important;
         height       : 40px !important;
         border-radius: 50%;
-        background   : $greenLight;
+        background   : $white;
         transition   : all .3s ease;
 
         &:after {
@@ -124,14 +162,29 @@
 
         &--prev {
             left: 50px !important;
+
+            @media screen and (max-width: $breakpoint992) {
+                left: 0 !important;
+            }
         }
 
         &--next {
             right: 50px !important;
+
+            @media screen and (max-width: $breakpoint992) {
+                right: 0 !important;
+            }
         }
     }
 }
-.swiper-pagination-bullet {
-    width: 14px !important;
-    height: 14px !important;
+
+.swiper-pagination {
+    @media screen and (max-width: $breakpoint992) {
+        display: none !important;
+    }
+
+    &-bullet {
+        width : 14px !important;
+        height: 14px !important;
+    }
 }

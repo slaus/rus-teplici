@@ -17,6 +17,9 @@
         @media screen and (max-width: $breakpoint1450) {
             margin-bottom: 30px;
         }
+        @media screen and (max-width: $breakpoint577) {
+            text-align: center;
+        }
     }
 
     &__desc {
@@ -25,6 +28,10 @@
 
         @media screen and (max-width: $breakpoint1200) {
             font-size: 16px;
+            line-height: 18px;
+        }
+        @media screen and (max-width: $breakpoint577) {
+            font-size: 14px;
         }
 
         p+p {

@@ -75,5 +75,8 @@
             text-align: left;
             font-size: 16px;
         }
+        @media screen and (max-width: $breakpoint577) {
+            font-size: 15px;
+        }
     }
 }

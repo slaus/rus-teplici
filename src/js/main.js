@@ -266,3 +266,67 @@ const swiperTerms = new Swiper('.swiper-terms', {
     },
   }
 });
+
+/** Mobile swiper */
+function initSwipers(swiperSelectors) {
+  const isMobile = window.innerWidth <= 992;
+
+  swiperSelectors.forEach((selector) => {
+    const swiperEl = document.querySelector(selector);
+
+    if (!swiperEl) return;
+
+    if (isMobile) {
+      if (!swiperEl.classList.contains('swiper-initialized')) {
+        swiperEl.classList.add('swiper');
+        const swiper = new Swiper(selector, {
+          slidesPerView: 1,
+          spaceBetween: 20,
+          loop: true,
+          mousewheel: false,
+          grabCursor: true,
+          autoplay: {
+            delay: 15000,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: `${selector} .swiper-pagination`,
+          },
+          navigation: {
+            nextEl: `${selector} .swiper-button-next`,
+            prevEl: `${selector} .swiper-button-prev`,
+          },
+          keyboard: {
+            enabled: true,
+          },
+          scrollbar: {
+            el: `${selector} .swiper-scrollbar`,
+          },
+          breakpoints: {
+            480: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            577: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+          },
+        });
+
+        swiperEl.swiperInstance = swiper;
+      }
+    } else {
+      if (swiperEl.classList.contains('swiper-initialized')) {
+        swiperEl.swiperInstance.destroy(true, true);
+        swiperEl.classList.remove('swiper');
+        delete swiperEl.swiperInstance;
+      }
+    }
+  });
+}
+
+const swiperClasses = ['.swiper-best', '.swiper-green', '.swiper-other', '.swiper-articles', '.swiper-testimonials'];
+
+window.addEventListener('load', () => initSwipers(swiperClasses));
+window.addEventListener('resize', () => initSwipers(swiperClasses));

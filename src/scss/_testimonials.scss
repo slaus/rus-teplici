@@ -22,71 +22,157 @@
         @media screen and (max-width: $breakpoint1450) {
             margin-bottom: 30px;
         }
-    }
 
-    &__title {
-        margin-bottom: 0;
-
-        span {
-            color: $greenDark;
-        }
-    }
-
-    &__btn {
-        box-sizing     : border-box;
-        display        : flex;
-        flex-direction : row;
-        justify-content: center;
-        align-items    : center;
-        padding        : 10px 40px 10px 20px;
-        height         : 41px;
-        border         : 1.5px solid $green;
-        border-radius  : 10px 10px 0px 10px;
-        flex           : none;
-        order          : 1;
-        flex-grow      : 0;
-        font-weight    : 500;
-        font-size      : 18px;
-        text-transform : uppercase;
-        text-decoration: none;
-        color          : $black;
-        position       : relative;
-
-        @media screen and (max-width: $breakpoint1450) {
-            height     : 38px;
-            line-height: 38px;
-            font-size  : 17px;
+        @media screen and (max-width: $breakpoint577) {
+            flex-direction: column;
+            align-items   : center;
         }
 
-        &:after {
-            content        : "";
-            position       : absolute;
-            right          : 15px;
-            width          : 20px;
-            height         : 20px;
+        &--title {
+            margin-bottom: 0;
+
+            span {
+                color: $greenDark;
+            }
+        }
+
+        &--btn {
+            box-sizing     : border-box;
             display        : flex;
+            flex-direction : row;
             justify-content: center;
             align-items    : center;
-            background     : url("../img/arrow-right-top.svg") center center no-repeat;
-            background-size: contain;
+            padding        : 10px 40px 10px 20px;
+            height         : 41px;
+            border         : 1.5px solid $green;
+            border-radius  : 10px 10px 0px 10px;
+            flex           : none;
+            order          : 1;
+            flex-grow      : 0;
+            font-weight    : 500;
+            font-size      : 18px;
+            text-transform : uppercase;
+            text-decoration: none;
+            color          : $black;
+            position       : relative;
+
+            @media screen and (max-width: $breakpoint1450) {
+                height     : 38px;
+                line-height: 38px;
+                font-size  : 17px;
+            }
+
+            @media screen and (max-width: $breakpoint577) {
+                display: none;
+            }
+
+            &:after {
+                content        : "";
+                position       : absolute;
+                right          : 15px;
+                width          : 20px;
+                height         : 20px;
+                display        : flex;
+                justify-content: center;
+                align-items    : center;
+                background     : url("../img/arrow-right-top.svg") center center no-repeat;
+                background-size: contain;
+            }
+
+            &:hover {
+                background: $orange;
+                color     : $green;
+            }
+        }
+    }
+
+    &__bottom {
+        display       : none;
+        width         : 100%;
+        flex-direction: column;
+        align-items   : center;
+
+        @media screen and (max-width: $breakpoint577) {
+            display   : flex;
+            margin-top: 30px;
         }
 
-        &:hover {
-            background: $orange;
-            color     : $green;
+        &--btn {
+            box-sizing     : border-box;
+            display        : flex;
+            flex-direction : row;
+            justify-content: center;
+            align-items    : center;
+            padding        : 10px 40px 10px 20px;
+            border         : 1.5px solid $green;
+            border-radius  : 10px 10px 0px 10px;
+            flex           : none;
+            order          : 1;
+            flex-grow      : 0;
+            font-weight    : 500;
+            text-transform : uppercase;
+            text-decoration: none;
+            color          : $black;
+            position       : relative;
+            height         : 38px;
+            line-height    : 38px;
+            font-size      : 17px;
+
+            &:after {
+                content        : "";
+                position       : absolute;
+                right          : 15px;
+                width          : 20px;
+                height         : 20px;
+                display        : flex;
+                justify-content: center;
+                align-items    : center;
+                background     : url("../img/arrow-right-top.svg") center center no-repeat;
+                background-size: contain;
+            }
+
+            &:hover {
+                background: $orange;
+                color     : $green;
+            }
         }
     }
 
     &__block {
-        display              : grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap                  : 40px 30px;
+        position: relative;
+        overflow: hidden;
 
-        @media screen and (max-width: $breakpoint1450) {
-            gap: 30px 20px;
+        & .slider__pagination,
+        & .slider__button {
+            display: none;
         }
+
+        .swiper-wrapper {
+            display              : grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap                  : 50px;
+
+            @media screen and (max-width: $breakpoint1450) {
+                gap: 30px;
+            }
+
+            @media screen and (max-width: $breakpoint1200) {
+                gap: 20px;
+            }
+
+            @media screen and (max-width: $breakpoint992) {
+                display: flex;
+                gap    : 0;
+            }
+        }
+
         @media screen and (max-width: $breakpoint992) {
-            grid-template-columns: repeat(1, 1fr);
+
+            & .slider__pagination,
+            & .slider__button {
+                display        : flex;
+                justify-content: center;
+            }
         }
     }
 
@@ -94,8 +180,13 @@
         display              : grid;
         grid-template-columns: 30% auto;
         gap                  : 20px;
+
         @media screen and (max-width: $breakpoint992) {
-           grid-template-columns: 35% auto; 
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        @media screen and (max-width: $breakpoint577) {
+            text-align: center;
         }
     }
 
@@ -114,6 +205,10 @@
         height       : 160px;
         border-radius: 15px;
         overflow     : hidden;
+
+        @media screen and (max-width: $breakpoint992) {
+            height: 250px;
+        }
 
         img {
             width     : 100%;
@@ -139,6 +234,7 @@
             font-size: 15px;
         }
 
+
         &:hover {
             color: $greenDark;
         }
@@ -153,6 +249,10 @@
         @media screen and (max-width: $breakpoint1200) {
             gap: 10px;
         }
+
+        @media screen and (max-width: $breakpoint577) {
+            justify-content: center;
+        }
     }
 
     &__name {
@@ -162,6 +262,12 @@
         color      : $greenDark;
         width      : fit-content;
         display    : inline-block;
+
+        @media screen and (max-width: $breakpoint577) {
+            display   : block;
+            width     : 100%;
+            text-align: center;
+        }
     }
 
     &__data {
@@ -176,6 +282,13 @@
 
         @media screen and (max-width: $breakpoint1200) {
             font-size: 16px;
+        }
+
+        @media screen and (max-width: $breakpoint577) {
+            position  : relative;
+            display   : block;
+            text-align: center;
+            width     : 100%;
         }
     }
 
@@ -192,6 +305,10 @@
 
         @media screen and (max-width: $breakpoint1200) {
             font-size: 16px;
+            line-height: 18px;
+        }
+        @media screen and (max-width: $breakpoint577) {
+            font-size: 15px;
         }
     }
 
@@ -208,6 +325,11 @@
 
         @media screen and (max-width: $breakpoint1200) {
             font-size: 16px;
+        }
+
+        @media screen and (max-width: $breakpoint577) {
+            text-align: center;
+            align-self: center;
         }
 
         &:hover {

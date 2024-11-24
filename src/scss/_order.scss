@@ -18,12 +18,19 @@
         @media screen and (max-width: $breakpoint1450) {
             margin-bottom: 30px;
         }
+        @media screen and (max-width: $breakpoint577) {
+            text-align: center;
+        }
     }
 
     &__block {
         display              : grid;
         grid-template-columns: repeat(2, 1fr);
         gap                  : 20px;
+
+        @media screen and (max-width: $breakpoint768) {
+           grid-template-columns: repeat(1, 1fr); 
+        }
     }
 
     &__item {
@@ -71,6 +78,10 @@
 
             @media screen and (max-width: $breakpoint1200) {
                 font-size: 16px;
+                line-height: 18px;
+            }
+            @media screen and (max-width: $breakpoint577) {
+                font-size: 14px;
             }
         }
     }
