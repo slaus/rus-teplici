@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center;
     // align-items: center;
-    z-index: 2;
+    z-index: 9;
     display: none;
 
     .modal {
@@ -67,6 +67,10 @@
                 height: 100%;
                 object-fit: contain;
             }
+        }
+
+        &__body {
+            padding-top: 20px;
         }
     }
 }

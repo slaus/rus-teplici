@@ -3,13 +3,10 @@
     text-align: center;
     background: $orange;
 
-    @media screen and (max-width: $breakpoint1200) {
-        height: 55px;
+    @media screen and (max-width: $breakpoint768) {
+        width: calc(100% - 90px);
+        border-radius: 0 0 15px
     }
-    // @media screen and (max-width: $breakpoint768) {
-    //     width: calc(100% - 90px);
-    //     border-radius: 0 0 15px
-    // }
 
     &__block {
         height         : 63px;
@@ -20,11 +17,11 @@
         justify-content: center;
 
         @media screen and (max-width: $breakpoint1200) {
-            height: 55px;
             gap: 30px;
         }
         @media screen and (max-width: $breakpoint768) {
             gap: 10px;
+            justify-content: flex-start;
         }
     }
 
@@ -50,7 +47,7 @@
             height: 35px;
             width : 35px;
             border-radius:50%;
-            flex: 0 1 35px
+            flex: 0 0 35px;
 
             img {
                 width: 18px;
@@ -77,6 +74,9 @@
         }
         @media screen and (max-width: $breakpoint577) {
             font-size: 15px;
+        }
+        @media screen and (max-width: $breakpoint480) {
+            font-size: 13px;
         }
     }
 }

@@ -2,8 +2,4 @@
     height    : 138px;
     background: $white;
     box-shadow: 0px 4px 4px #EDEEED;
-
-    @media screen and (max-width: $breakpoint1200) {
-        height: 100px;
-    }
 }

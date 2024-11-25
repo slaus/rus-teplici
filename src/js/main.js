@@ -1,37 +1,14 @@
-/** Мобильное меню бургер */
-function burgerMenu() {
-  const burger = document.querySelector('.burger');
-  const menu = document.querySelector('.menu');
-  const body = document.querySelector('body');
-  burger.addEventListener('click', () => {
-    if (!menu.classList.contains('active')) {
-      menu.classList.add('active');
-      burger.classList.add('active');
-      body.classList.add('locked');
-    } else {
-      menu.classList.remove('active');
-      burger.classList.remove('active');
-      body.classList.remove('locked');
-    }
-  });
-  // Вот тут мы ставим брейкпоинт навбара
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 991) {
-      menu.classList.remove('active');
-      burger.classList.remove('active');
-      body.classList.remove('locked');
-    }
-  });
-}
-// burgerMenu();
-
-
 /** Megamenu */
+const body = document.querySelector("body");
 const menu = document.querySelector("#menu");
 const megamenu = document.querySelector("#megamenu");
 
 menu.querySelector(".menu__link").addEventListener("click", (e) => {
   e.preventDefault();
+  body.classList.toggle("open");
+  if (window.innerWidth <= 767) {
+    body.classList.toggle("locked");
+  }
   megamenu.classList.toggle("open");
   menu.classList.toggle("open");
 });
@@ -41,9 +18,21 @@ document.addEventListener("click", (e) => {
   const isClickOnMenu = menu.contains(e.target);
 
   if (!isClickInsideMegamenu && !isClickOnMenu) {
+    body.classList.remove("open");
+    if (window.innerWidth <= 767) {
+      body.classList.remove("locked");
+    }
     megamenu.classList.remove("open");
     menu.classList.remove("open");
   }
+});
+
+const openMegamenu = document.querySelectorAll(".megamenu__list-subbtn--plus");
+openMegamenu.forEach((item) => {
+  item.addEventListener("click" , (e) => {
+    e.preventDefault();
+    item.parentElement.classList.toggle("open");
+  });
 });
 
 
